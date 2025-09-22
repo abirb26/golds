@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Product</title>
+</head>
+
+<body class="bg-dark text-dark">
+
+    <script>
+        $(document).ready(function () {
+            $("#checkbox").change(function () {
+                var bd = document.body;
+                $("nav").toggleClass("bg-secondary");
+                $("#home").toggleClass("text-white");
+                $("#about").toggleClass("text-white");
+                $("#contact").toggleClass("text-white");
+
+
+                bd.classList.toggle("dark-mode");
+
+
+
+            });
+
+        });
+
+
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#nec").click(function () {
+                $("#row1").show();
+                $("#row2").hide();
+                $("#row3").hide();
+                $("#row4").hide();
+            });
+            $("#ring").click(function () {
+                $("#row2").show();
+                $("#row1").hide();
+                $("#row3").hide();
+                $("#row4").hide();
+
+            });
+            $("#bra").click(function () {
+                $("#row3").show();
+                $("#row1").hide();
+                $("#row2").hide();
+                $("#row4").hide();
+
+            });
+            $("#ear").click(function () {
+                $("#row4").show();
+                $("#row1").hide();
+                $("#row2").hide();
+                $("#row3").hide();
+
+            });
+
+        });
+
+    </script>
+
+<nav class="navbar navbar-expand-lg bg-secondary border-warning sticky-top mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand my-auto" href="{{url('/')}}"><img class="rounded-circle"
+                style="width: 60px; width: 60px;" src="images/logo.jpeg" alt="goldstore logo"></a>
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content-start flex-grow-1">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-outline-warning mr-sm-2 mb-2 " href="{{url('/home')}}" id="home">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <div class="btn-group">
+                    <a  class="nav-link btn btn-outline-warning mb-3" href="Product.html">Product</a>
+                    <button type="button" class="nav-link btn btn-outline-warning mb-3 mr-2
+                     dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                    </button>
+                    <div class="dropdown-menu" style="background-color:rgba(249, 242, 242, 0.256)">
+                        <a class="dropdown-item text-warning"  id="nec" href="p/create">Create</a>
+                          <a class="dropdown-item text-warning"  id="ring">Rings</a>
+                          <a class="dropdown-item text-warning"  id="bra">Bracelets</a>
+                          <a class="dropdown-item text-warning"  id="ear">Earrings</a>
+                    </div>
+                  </div>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-warning  mr-sm-2 mb-2 " href="AboutUs.html" id="about">About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-warning  mr-sm-2 mb-3 " href="Contact.html"
+                        id="contact">Contact us</a>
+                </li>
+            </ul>
+            <div class="mb-2 justify-content-end">
+
+                <a class="mr-3 text-light" href="https://www.facebook.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                        class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                    </svg>
+                </a>
+
+                <a class="mr-3 text-light" href="https://www.instagram.com/" id="inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                    </svg>
+                </a>
+
+                <a class="mr-3 text-light" href="https://web.whatsapp.com/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+            <!--dark and light mode start -->
+            <div class="">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+
+                    <i class="fas fa-moon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+                        </svg></i>
+                    <i class="fas fa-sun"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                        </svg></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+            <!--dark and light mode end-->
+
+            <!--translate button start here-->
+            <button class="bg-light rounded-circle border-warning mb-2" onclick="myLang()" id="click">TR</button>
+
+            <script>
+                
+
+                
+                
+                
+                function myLang() {
+                    var b = document.getElementById("click");
+                    var x = document.getElementById("home");
+                    var y = document.getElementById("about");
+                    var z = document.getElementById("contact");
+                    var as = document.getElementById("aboutus");
+                    var ba = document.getElementById("back");
+                    
+
+                    
+
+
+
+
+
+
+
+                    if (b.innerHTML === "EN") {
+                        b.innerHTML = "TR";
+                        x.innerHTML = "Home";
+                        y.innerHTML = "About";
+                        z.innerHTML = "Contact Us";
+                        as.innerHTML = "About Us";
+                        ba.innerHTML = "Rent your car now";
+                      
+
+
+
+                    } else if (b.innerHTML = "TR") {
+                        b.innerHTML = "EN";
+                        x.innerHTML = "Anasayfa";
+                        y.innerHTML = "Biz Kimiz";
+                        z.innerHTML = "İletişim";
+                        as.innerHTML = "Biz Kimiz";
+                        ba.innerHTML = "Arabanızı hemen kiralayın";
+
+
+
+
+
+
+                    }
+
+
+                }
+
+            </script>
+
+
+            <!--translate button end here-->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <center>
+        <h1 class="text-warning text-center">Our Gold JEWELLERY</h1>
+        <hr class="border border-secondary w-50 mb-5">
+        <div class="container my-4 ">
+            <div class="row" id="row1">
+                @foreach ( $newgolds as  $newgold)
+                    
+            
+                <div class="col-sm-4 my-4">
+                    <div class="card rounded-lg" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="{{asset('storage/'. $newgold->image)}}" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$newgold->name}}</h5>
+                            
+                            <lu class="card-text text-left">
+                                <li>Karat:{{$newgold->karat}}k </li>
+                                <li>Grams:{{$newgold->grams}}G</li> 
+                                <li>Thickness:{{$newgold->grams}}m.m</li>
+                            </lu>
+
+                            <button href="Necklace/Compass Star.html" class="text-light btn btn-success btn-sm mt-2 float-left" >{{$newgold->price}}$</button>
+                            <a href="p/{{$newgold->id}}" class="text-light btn btn-warning btn-sm mt-2 float-right" >Show More</a>
+
+                        </div>
+                      </div>
+                    
+                </div>
+                @endforeach
+              <!--  <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/nec2.png" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Eye and Key Necklace</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 7.6</li> 
+                                <li>Length: 45 c.m</li>
+                            </lu>
+                            <a href="Necklace/Eye and Key.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/nec3.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Heart and Key Necklace</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 2.4</li> 
+                                <li>Length: 45 c.m</li>
+                            </lu>
+                            <a href="Necklace/Heart and Key.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>-->
+
+           <!-- <div class="row" id="row2">
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ring1.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Red Stone Gold Ring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 14k </li>
+                                <li>Grams: 1.67</li> 
+                                <li>Size: 10</li>
+                            </lu>
+                            <a href="Rings/Red Stone Gold.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ring2.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Triangle Stone Ring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 14k </li>
+                                <li>Grams: 1.25</li> 
+                                <li>Size: 8.5</li>
+                            </lu>
+                            <a href="Rings/Triangle Stone.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ring3.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Heart & 15 Ring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 14k </li>
+                                <li>Grams: 1.9</li> 
+                                <li>Size: 10</li>
+                            </lu>
+                            <a href="Rings/Heart and 15.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+
+            <div class="row" id="row3">
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/brac1.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Diamond Gold Bracelet</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 2.6</li> 
+                                <li>Length: 19 c.m</li>
+                            </lu>
+                            <a href="Bracelets/Diamond Gold Bracelet.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/brac2.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sneak Gold Bracelet</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 14k </li>
+                                <li>Grams: 6.36</li> 
+                                <li>Length: 19 c.m</li>
+                            </lu>
+                            <a href="Bracelets/Sneak Gold Bracelet.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/brac3.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Chain Paper Clip Bracelet </h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 15</li> 
+                                <li>Length: 19 c.m</li>
+                            </lu>
+                            <a href="Bracelets/Chain Paper Clip Bracelet.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+            <div class="row" id="row4">
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ear1.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Gold Stone Earring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 4.1</li> 
+                                <li>Height: 2.2 cm</li>
+                            </lu>
+                            <a href="Earrings/Gold Stone Earring.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ear2.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Chain Hanging Clip Earring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 18k </li>
+                                <li>Grams: 3.64</li> 
+                                <li>Height: 5 cm</li>
+                            </lu>
+                            <a href="Earrings/Chain Hanging Clip Earring.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 my-4">
+                    <div class="card" style="width: 18rem; box-shadow: 0px 0px 25px 5px gold;">
+                        <img src="images/cards/ear3.jpg" class="card-img-top border border-bottom rounded-lg" style="width: 240; height: 300 ;">
+                        <div class="card-body">
+                            <h5 class="card-title">Clover Earring</h5>
+                            <lu class="card-text text-left">
+                                <li>Karat: 14k </li>
+                                <li>Grams: 3.8</li> 
+                                <li>Height: 1.2 cm</li>
+                            </lu>
+                            <a href="Earrings/Clover Earring.html" class="text-light btn btn-warning btn-sm mt-2" >Read More</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </center>
+
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="w-100 text-center font-weight-bold fixed-bottom" style="font-size: 10px;"><span
+        class="copyright text-light" >Copyright 2024 by AMR ALSEBAI</span> </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
